@@ -9,16 +9,17 @@ repositories {
 }
 
 dependencies {
-    implementation 'io.quarkus:quarkus-smallrye-jwt'
+    implementation 'io.quarkus:quarkus-jdbc-mysql'
+    implementation 'io.quarkus:quarkus-agroal'
     implementation 'io.quarkus:quarkus-resteasy-jackson'
     implementation 'io.quarkus:quarkus-vertx-web'
-    implementation 'io.quarkus:quarkus-smallrye-openapi'
     implementation 'io.quarkus:quarkus-resteasy-jsonb'
+    implementation 'io.quarkus:quarkus-rest-client'
     implementation 'io.quarkus:quarkus-hibernate-validator'
+   // implementation 'io.quarkus:quarkus-reactive-mysql-client'
     implementation 'io.quarkus:quarkus-flyway'
-    implementation 'io.quarkus:quarkus-reactive-mysql-client'
     implementation 'io.quarkus:quarkus-hibernate-orm'
-    implementation 'io.quarkus:quarkus-hibernate-reactive'
+   // implementation 'io.quarkus:quarkus-hibernate-reactive'
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
     implementation 'io.quarkus:quarkus-resteasy'
 
@@ -39,8 +40,8 @@ compileTestJava {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
 
 test {
