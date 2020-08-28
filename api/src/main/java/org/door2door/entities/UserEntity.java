@@ -8,10 +8,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class UserEntity {
 	@Id
-	@Column(name="id", unique = true, nullable = false)
+	@Column(name="email", unique = true, nullable = false)
 	private String email;
 
 	@Column(name="password")
@@ -24,7 +24,7 @@ public class UserEntity {
 	private String lastName;
 
 	@ManyToOne
-	@JoinColumn(name="user_fk")
+	@JoinColumn(name="organization_fk")
 	private OrganizationEntity organization;
 
 	public String getEmail() {

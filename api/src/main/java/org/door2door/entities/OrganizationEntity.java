@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -21,6 +22,14 @@ public class OrganizationEntity {
 
 	@OneToMany(cascade={CascadeType.ALL}, mappedBy="organization")
 	private List<UserEntity> users;
+
+	public void addUser(final UserEntity user) {
+		if (users == null) {
+			users = new ArrayList<>();
+		}
+		users.add(user);
+		user.setOrganization(this);
+	}
 
 	public UUID getId() {
 		return id;

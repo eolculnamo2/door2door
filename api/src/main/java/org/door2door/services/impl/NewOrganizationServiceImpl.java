@@ -35,7 +35,7 @@ public class NewOrganizationServiceImpl implements NewOrganizationService {
 					userEntity.setFirstName(user.getFirstName());
 					userEntity.setLastName(user.getLastName());
 					userEntity.setPassword(user.getPassword());
-					userEntity.setOrganization(organizationEntity);
+					organizationEntity.addUser(userEntity);
 					return userEntity;
 				})
 				.collect(Collectors.toList());

@@ -15,7 +15,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `organization` (
-    `id` varchar(155) UNIQUE,
+    `id` VARCHAR(36)  UNIQUE,
     `name` varchar(155) NOT NULL,
 
     PRIMARY KEY (`id`)
