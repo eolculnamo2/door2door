@@ -1,5 +1,6 @@
 package org.door2door.services.impl;
 
+import io.quarkus.elytron.security.common.BcryptUtil;
 import org.door2door.dao.OrganizationDao;
 import org.door2door.dto.NewOrganizationDto;
 import org.door2door.entities.OrganizationEntity;
@@ -34,7 +35,7 @@ public class NewOrganizationServiceImpl implements NewOrganizationService {
 					userEntity.setEmail(user.getEmail());
 					userEntity.setFirstName(user.getFirstName());
 					userEntity.setLastName(user.getLastName());
-					userEntity.setPassword(user.getPassword());
+					userEntity.setPassword(BcryptUtil.bcryptHash(user.getPassword()));
 					organizationEntity.addUser(userEntity);
 					return userEntity;
 				})
