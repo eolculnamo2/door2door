@@ -1,7 +1,7 @@
 package org.door2door.dao.impl;
 
-import org.door2door.dao.OrganizationDao;
-import org.door2door.entities.OrganizationEntity;
+import org.door2door.dao.TeamDao;
+import org.door2door.entities.TeamEntity;
 import org.hibernate.Session;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -10,18 +10,18 @@ import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
 @ApplicationScoped
-public class OrganizationDaoImpl implements OrganizationDao {
+public class TeamDaoImpl implements TeamDao {
 	EntityManager entityManager;
 
 	@Inject
-	public OrganizationDaoImpl(final EntityManager entityManager) {
+	public TeamDaoImpl(final EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
 
 	@Transactional
 	@Override
-	public void save(final OrganizationEntity organization) {
+	public void save(final TeamEntity team) {
 		Session session = entityManager.unwrap(Session.class);
-		session.save(organization);
+		session.save(team);
 	}
 }
