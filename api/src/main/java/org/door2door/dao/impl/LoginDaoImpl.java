@@ -8,7 +8,7 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 public class LoginDaoImpl implements LoginDao {
-    EntityManager entityManager;
+    private final EntityManager entityManager;
 
     @Inject
     public LoginDaoImpl (final EntityManager entityManager){

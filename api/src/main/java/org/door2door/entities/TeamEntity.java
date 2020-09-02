@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Table(name = "organization")
+@Table(name = "team")
 public class TeamEntity {
 	@Id
 	@Column(name="id", unique = true, nullable = false)
@@ -128,9 +128,7 @@ public class TeamEntity {
 		this.zip = zip;
 	}
 
-	public String getPassword() {
-		return password;
-	}
+	public String getPassword() { return password; }
 
 	public void setPassword(String password) {
 		this.password = password;

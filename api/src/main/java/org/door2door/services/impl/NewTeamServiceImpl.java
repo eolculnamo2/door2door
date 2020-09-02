@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 @ApplicationScoped
 public class NewTeamServiceImpl implements NewTeamService {
-	TeamDao teamDao;
+	private final TeamDao teamDao;
 
 	@Inject
 	public NewTeamServiceImpl(final TeamDao teamDao) {

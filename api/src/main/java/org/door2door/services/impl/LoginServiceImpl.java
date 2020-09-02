@@ -9,7 +9,7 @@ import org.door2door.services.LoginService;
 import javax.inject.Inject;
 
 public class LoginServiceImpl implements LoginService {
-    private LoginDaoImpl loginDao;
+    private final LoginDaoImpl loginDao;
 
     @Inject
     public LoginServiceImpl (LoginDaoImpl loginDao) {

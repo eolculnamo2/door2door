@@ -9,13 +9,13 @@ import javax.persistence.Table;
 import java.util.UUID;
 
 @Entity
-@Table(name = "users")
+@Table(name = "contacts")
 public class ContactEntity {
 	@Id
 	@Column(name="id", unique = true, nullable = false)
 	private UUID id;
 
-	@Column(name="email")
+	@Column(name="fullName")
 	private String fullName;
 
 	@Column(name="phone")
