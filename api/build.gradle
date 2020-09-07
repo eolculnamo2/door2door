@@ -20,7 +20,7 @@ dependencies {
     implementation 'io.quarkus:quarkus-rest-client'
     implementation 'io.quarkus:quarkus-hibernate-validator'
     implementation 'javax.persistence:javax.persistence-api'
-   // implementation 'io.quarkus:quarkus-reactive-mysql-client'
+    // implementation 'io.quarkus:quarkus-reactive-mysql-client'
     implementation 'io.quarkus:quarkus-flyway'
     implementation 'io.quarkus:quarkus-hibernate-orm'
    // implementation 'io.quarkus:quarkus-hibernate-reactive'

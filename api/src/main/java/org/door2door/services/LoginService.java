@@ -1,8 +1,8 @@
 package org.door2door.services;
 
 import org.door2door.dto.LoginDto;
-import org.door2door.dto.UserDto;
+import org.door2door.dto.TeamDto;
 
 public interface LoginService {
-    Boolean validateLogin (LoginDto loginDto);
+    TeamDto validateLogin (LoginDto loginDto);
 }

@@ -2,7 +2,7 @@ package org.door2door.services.impl;
 
 import io.quarkus.elytron.security.common.BcryptUtil;
 import org.door2door.dao.TeamDao;
-import org.door2door.dto.NewTeamDto;
+import org.door2door.dto.TeamDto;
 import org.door2door.entities.TeamEntity;
 import org.door2door.entities.ContactEntity;
 import org.door2door.services.NewTeamService;
@@ -23,10 +23,19 @@ public class NewTeamServiceImpl implements NewTeamService {
 	}
 
 	@Override
-	public void createTeam(final NewTeamDto team) {
+	public void createTeam(final TeamDto team) {
 		TeamEntity teamEntity = new TeamEntity();
 		teamEntity.setId(UUID.randomUUID());
+		teamEntity.setEmail(team.getEmail());
+		teamEntity.setWebsite(team.getWebsite());
+		teamEntity.setDescription(team.getDescription());
+		teamEntity.setAddress(team.getAddress());
+		teamEntity.setCity(team.getCity());
+		teamEntity.setState(team.getState());
+		teamEntity.setZip(team.getZip());
 		teamEntity.setName(team.getName());
+		String password = BcryptUtil.bcryptHash(team.getPassword());
+		teamEntity.setPassword(password);
 
 		List<ContactEntity> contacts = team.getContacts()
 				.stream()
