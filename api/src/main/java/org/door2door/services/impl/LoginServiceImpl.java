@@ -8,12 +8,10 @@ import org.door2door.dto.TeamDto;
 import org.door2door.entities.TeamEntity;
 import org.door2door.services.LoginService;
 
-import javax.enterprise.context.Dependent;
 import javax.inject.Inject;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Dependent
 public class LoginServiceImpl implements LoginService {
     private final LoginDaoImpl loginDao;
 

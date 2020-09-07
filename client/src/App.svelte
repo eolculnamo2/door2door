@@ -11,7 +11,7 @@
   }
 </script>
 
-<style>c
+<style>
   main {
     margin: 0;
     width: 100vw;
