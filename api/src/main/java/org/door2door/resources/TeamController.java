@@ -1,6 +1,6 @@
 package org.door2door.resources;
 
-import org.door2door.dto.NewTeamDto;
+import org.door2door.dto.TeamDto;
 import org.door2door.services.NewTeamService;
 
 import javax.inject.Inject;
@@ -18,7 +18,7 @@ public class 	TeamController {
 	}
 
 	@POST
-	public Response createTeam(final NewTeamDto newTeamDto) {
+	public Response createTeam(final TeamDto newTeamDto) {
 		newTeamService.createTeam(newTeamDto);
 		return Response.status(Response.Status.OK).build();
 	}

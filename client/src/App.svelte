@@ -1,34 +1,58 @@
 <script lang="ts">
-  export let name: string;
+  interface LoginPayload {
+    email: String;
+    password: String;
+  }
+  const validateLogin = async (payload:LoginPayload) => {
+    const response = await axios.post('/login' , payload)
+    if (response.status === 200) {
+      // set Context and redirect to dashboard
+    }
+  }
 </script>
 
 <style>
   main {
-    text-align: center;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .formContainer {
     padding: 1em;
-    max-width: 240px;
-    margin: 0 auto;
+    width: 900px;
+    height: 200px;
+    background-color: whitesmoke;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+  }
+  .loginInput {
+    width: 100%;
+    line-height: 22px;
+  }
+  .loginButton {
+    width: 100%;
+    background-color: blue;
+    height: 2em;
+    color: white;
   }
 
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
-  }
-
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
-    }
+  .loginButton:active {
+    background-color: lightblue;
   }
 </style>
 
 <main>
-  <h1>Hello {name}!</h1>
-  <p>
-    Visit the
-    <a href="https://svelte.dev/tutorial">Svelte tutorial</a>
-    to learn how to build Svelte apps.
-  </p>
+  <h1>Door2Door</h1>
+  <div class="formContainer">
+    <h2>Login</h2>
+    <input type="text" class="loginInput" />
+    <input type="text" class="loginInput" />
+    <button class="loginButton">Login</button>
+  </div>
 </main>

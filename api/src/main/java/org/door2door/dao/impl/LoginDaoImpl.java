@@ -15,7 +15,7 @@ public class LoginDaoImpl implements LoginDao {
         this.entityManager = entityManager;
     }
 
-    public TeamEntity getUserByEmail (final String email) {
+    public TeamEntity getTeamByEmail (final String email) {
         Session session = entityManager.unwrap(Session.class);
         return session.get(TeamEntity.class, email);
     }

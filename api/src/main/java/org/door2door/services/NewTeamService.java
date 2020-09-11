@@ -1,7 +1,7 @@
 package org.door2door.services;
 
-import org.door2door.dto.NewTeamDto;
+import org.door2door.dto.TeamDto;
 
 public interface NewTeamService {
-	void createTeam(NewTeamDto organization);
+	void createTeam(TeamDto organization);
 }
