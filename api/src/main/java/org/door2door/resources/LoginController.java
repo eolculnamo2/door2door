@@ -9,13 +9,13 @@ import org.jboss.resteasy.spi.HttpResponse;
 
 import javax.annotation.security.PermitAll;
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 import javax.ws.rs.core.Response.Status;
 
 @Path("/login")
-@ApplicationScoped
 public class LoginController {
   private LoginService loginService;
 
