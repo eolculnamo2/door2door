@@ -16,6 +16,12 @@ public class LoginController {
   public LoginController (LoginService loginService){
     this.loginService = loginService;
   }
+
+  @GET
+  @Produces(MediaType.TEXT_PLAIN)
+  public String test() {
+    return "test";
+  }
   @POST
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)

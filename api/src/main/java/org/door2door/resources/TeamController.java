@@ -9,7 +9,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 
 @Path("/team")
-public class 	TeamController {
+public class TeamController {
 	NewTeamService newTeamService;
 
 	@Inject
