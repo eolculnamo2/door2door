@@ -41,7 +41,8 @@ public class NewTeamServiceImpl implements NewTeamService {
 				.stream()
 				.map(contact -> {
 					ContactEntity contactEntity = new ContactEntity();
-					contactEntity.setFullName(contact.getFullName());
+					contactEntity.setFirstName(contact.getFirstName());
+					contactEntity.setLastName(contact.getLastName());
 					contactEntity.setId(contact.getId());
 					contactEntity.setPhone(contact.getPhone());
 					return contactEntity;

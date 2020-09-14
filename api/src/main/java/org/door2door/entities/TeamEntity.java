@@ -1,5 +1,7 @@
 package org.door2door.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +41,8 @@ public class TeamEntity {
 	@Column(name="password")
 	private String password;
 
-	@OneToMany(cascade={CascadeType.ALL}, mappedBy="contacts")
+	@OneToMany(cascade={CascadeType.ALL}, mappedBy="team")
+	@JsonManagedReference
 	private List<ContactEntity> contacts;
 
 	public UUID getId() {

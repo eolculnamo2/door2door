@@ -1,5 +1,7 @@
 package org.door2door.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,11 +17,19 @@ public class ContactEntity {
 	@Column(name="id", unique = true, nullable = false)
 	private UUID id;
 
-	@Column(name="fullName")
-	private String fullName;
+	@Column(name="first_name")
+	private String firstName;
+
+	@Column(name="last_name")
+	private String lastName;
 
 	@Column(name="phone")
 	private String phone;
+
+	@ManyToOne
+	@JoinColumn(name = "contact_fk")
+	@JsonBackReference
+	private TeamEntity team;
 
 	public UUID getId() {
 		return id;
@@ -29,15 +39,31 @@ public class ContactEntity {
 		this.id = id;
 	}
 
-	public String getFullName() {
-		return fullName;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
+	public void setFirstName(final String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(final String lastName) {
+		this.lastName = lastName;
 	}
 
 	public String getPhone() { return phone; }
 
 	public void setPhone(String phone) { this.phone = phone; }
+
+	public TeamEntity getTeam() {
+		return team;
+	}
+
+	public void setTeam(final TeamEntity teamEntity) {
+		this.team = teamEntity;
+	}
 }

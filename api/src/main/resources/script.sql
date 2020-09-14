@@ -1,22 +1,24 @@
 
-CREATE TABLE `organization` (
-    `id` VARCHAR(36)  UNIQUE,
-    `name` varchar(155) NOT NULL,
+CREATE TABLE `contacts` (
+    id VARCHAR(36)  UNIQUE,
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL,
+    name VARCHAR(155) NOT NULL,
 
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `users` (
-    `email` varchar(155) UNIQUE,
-    `password` varchar(500) DEFAULT NULL,
-    `first_name` varchar(45) DEFAULT NULL,
-    `last_name` varchar(45) DEFAULT NULL,
-    `organization_fk` varchar(155) DEFAULT NULL,
-    `enabled` tinyint(1) DEFAULT NULL,
-    `profile_pic` varchar(500) DEFAULT NULL,
-    `authority` varchar(45) DEFAULT NULL,
+    email VARCHAR(155) UNIQUE,
+    password VARCHAR(500) DEFAULT NULL,
+    first_name VARCHAR(45) DEFAULT NULL,
+    last_name VARCHAR(45) DEFAULT NULL,
+    contact_fk VARCHAR(155) DEFAULT NULL,
+    enabled TINYINT(1) DEFAULT NULL,
+    profile_pic VARCHAR(500) DEFAULT NULL,
+    authority VARCHAR(45) DEFAULT NULL,
 
     PRIMARY KEY (`email`),
-    FOREIGN KEY(`organization_fk`)
-    REFERENCES `organization` (`id`)
+    FOREIGN KEY(`contact_fk`)
+    REFERENCES `contacts` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

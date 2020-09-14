@@ -8,10 +8,12 @@ import org.door2door.dto.TeamDto;
 import org.door2door.entities.TeamEntity;
 import org.door2door.services.LoginService;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@ApplicationScoped
 public class LoginServiceImpl implements LoginService {
     private final LoginDaoImpl loginDao;
 
@@ -39,7 +41,8 @@ public class LoginServiceImpl implements LoginService {
                      .map(contact -> {
                          ContactDto contactDto = new ContactDto();
                          contactDto.setId(contact.getId());
-                         contactDto.setFullName(contact.getFullName());
+                         contactDto.setFirstName(contact.getFirstName());
+                         contactDto.setLastName(contact.getLastName());
                          contactDto.setPhone(contact.getPhone());
                          return contactDto;
                      })
