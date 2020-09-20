@@ -4,17 +4,17 @@ import java.util.List;
 import java.util.UUID;
 
 public class TeamDto {
-	private UUID id;
-	private String name;
 	private String email;
+	private String password;
+	private String name;
+	private List<ContactDto> contacts;
+	private String profile_pic;
 	private String website;
 	private String description;
 	private String address;
 	private String city;
 	private String state;
 	private String zip;
-	private String password;
-	private List<ContactDto> contacts;
 
 	public String getName() {
 		return name;
@@ -31,10 +31,6 @@ public class TeamDto {
 	public void setContacts(final List<ContactDto> contacts) {
 		this.contacts = contacts;
 	}
-
-	public UUID getId() { return id; }
-
-	public void setId(UUID id) { this.id = id; }
 
 	public String getEmail() { return email; }
 
@@ -67,4 +63,8 @@ public class TeamDto {
 	public String getPassword() { return password; }
 
 	public void setPassword(String password) { this.password = password; }
+
+	public String getProfile_pic() { return profile_pic; }
+
+	public void setProfile_pic(String profile_pic) { this.profile_pic = profile_pic; }
 }

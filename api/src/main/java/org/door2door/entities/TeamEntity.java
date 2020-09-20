@@ -11,11 +11,21 @@ import java.util.UUID;
 @Table(name = "team")
 public class TeamEntity {
 	@Id
-	@Column(name="id", unique = true, nullable = false)
-	private UUID id;
-
 	@Column(name="email")
 	private String email;
+
+	@Column(name="password")
+	private String password;
+
+	@Column(name="name")
+	private String name;
+
+	@OneToMany(cascade={CascadeType.ALL}, mappedBy="team")
+	@JsonManagedReference
+	private List<ContactEntity> contacts;
+
+	@Column(name="profile_pic")
+	private String profile_pic;
 
 	@Column(name="website")
 	private String website;
@@ -34,24 +44,6 @@ public class TeamEntity {
 
 	@Column(name="zip")
 	private String zip;
-
-	@Column(name="name")
-	private String name;
-
-	@Column(name="password")
-	private String password;
-
-	@OneToMany(cascade={CascadeType.ALL}, mappedBy="team")
-	@JsonManagedReference
-	private List<ContactEntity> contacts;
-
-	public UUID getId() {
-		return id;
-	}
-
-	public void setId(final UUID id) {
-		this.id = id;
-	}
 
 	public String getName() {
 		return name;
@@ -130,4 +122,8 @@ public class TeamEntity {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public String getProfile_pic() { return profile_pic; }
+
+	public void setProfile_pic(String profile_pic) { this.profile_pic = profile_pic; }
 }
