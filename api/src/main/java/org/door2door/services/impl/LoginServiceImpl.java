@@ -26,7 +26,6 @@ public class LoginServiceImpl implements LoginService {
         TeamEntity team = loginDao.getTeamByEmail(loginDto.getEmail());
          if (doesPasswordMatch(loginDto.getPassword(), team.getPassword())){
              TeamDto teamDto = new TeamDto();
-             teamDto.setId(team.getId());
              teamDto.setName(team.getName());
              teamDto.setEmail(team.getEmail());
              teamDto.setWebsite(team.getWebsite());
