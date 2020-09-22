@@ -25,7 +25,6 @@ public class NewTeamServiceImpl implements NewTeamService {
 	@Override
 	public void createTeam(final TeamDto team) {
 		TeamEntity teamEntity = new TeamEntity();
-		teamEntity.setId(UUID.randomUUID());
 		teamEntity.setEmail(team.getEmail());
 		teamEntity.setWebsite(team.getWebsite());
 		teamEntity.setDescription(team.getDescription());
